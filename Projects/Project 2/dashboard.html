@@ -1,0 +1,385 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard</title>
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/admin-style.css">
+</head>
+
+<body class="dashboard-body">
+
+    <!-- Sidebar -->
+    <aside class="sidebar" id="sidebar">
+        <div class="sidebar-header">
+            <i class="fa-solid fa-layer-group"></i>
+            <h2>AdminPanel</h2>
+        </div>
+        <ul class="sidebar-nav">
+            <li class="nav-item" data-target="dashboard">
+                <i class="fa-solid fa-desktop"></i>
+                <span>Dashboard</span>
+            </li>
+            <li class="nav-item" data-target="posts">
+                <i class="fa-solid fa-pen-to-square"></i>
+                <span>Manage Posts</span>
+            </li>
+            <li class="nav-item" data-target="users">
+                <i class="fa-solid fa-user-group"></i>
+                <span>Manage Users</span>
+            </li>
+            <li class="nav-item active" data-target="settings">
+                <i class="fa-solid fa-gear"></i>
+                <span>Site Settings</span>
+            </li>
+            <li class="nav-item" data-target="statistics">
+                <i class="fa-solid fa-chart-line"></i>
+                <span>View Statistics</span>
+            </li>
+        </ul>
+        <div class="sidebar-footer mt-auto" style="margin-top:auto">
+            <a href="index.html" class="logout-btn">
+                <i class="fa-solid fa-arrow-right-from-bracket"></i>
+                <span>Logout</span>
+            </a>
+        </div>
+    </aside>
+
+    <!-- Main Content -->
+    <main class="main-content" id="main-content">
+        <!-- Top Navbar -->
+        <header class="top-nav">
+            <button class="toggle-sidebar" id="toggleSidebar">
+                <i class="fa-solid fa-bars"></i>
+            </button>
+            <div class="search-bar">
+                <i class="fa-solid fa-magnifying-glass"></i>
+                <input type="text" placeholder="Search...">
+            </div>
+
+            <div class="header-right">
+                <div class="notification-bell">
+                    <i class="fa-regular fa-bell"></i>
+                    <span class="badge-dot"></span>
+                </div>
+                <div class="user-profile">
+                    <div class="avatar">
+                        <div class="avatar-circle">AU</div>
+                        <div class="user-info">
+                            <span class="name">Admin User</span>
+                            <span class="role">Superadmin</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <!-- Sections -->
+        <div class="content-wrapper">
+
+            <!-- Dashboard Section -->
+            <section id="section-dashboard" class="content-section">
+                <div class="section-header">
+                    <h1>Dashboard</h1>
+                    <p>Welcome to your AdminPanel. Here is a quick overview.</p>
+                </div>
+
+                <div class="stats-grid">
+                    <div class="stat-card">
+                        <div class="stat-icon bg-primary"><i class="fa-solid fa-file-lines"></i></div>
+                        <div class="stat-details">
+                            <h3>Total Posts</h3>
+                            <p class="stat-num dash-stat-posts">45</p>
+                        </div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-icon bg-warning"><i class="fa-solid fa-users"></i></div>
+                        <div class="stat-details">
+                            <h3>Total Users</h3>
+                            <p class="stat-num dash-stat-users">150</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div class="card-header">
+                        <h2>Quick Guide</h2>
+                    </div>
+                    <div class="card-body">
+                        <p style="margin-bottom: 15px; color: var(--text-muted);">This is your main dashboard area. From
+                            the sidebar on the left, you can access all features:</p>
+                        <ul style="list-style: none; padding: 0;">
+                            <li style="margin-bottom: 15px; display: flex; align-items: center; gap: 10px;">
+                                <div class="stat-icon bg-primary" style="width: 40px; height: 40px; font-size: 16px;"><i
+                                        class="fa-solid fa-pen-to-square"></i></div>
+                                <div><strong>Manage Posts:</strong> Create, edit, and delete your blog posts and
+                                    articles.</div>
+                            </li>
+                            <li style="margin-bottom: 15px; display: flex; align-items: center; gap: 10px;">
+                                <div class="stat-icon bg-success" style="width: 40px; height: 40px; font-size: 16px;"><i
+                                        class="fa-solid fa-user-group"></i></div>
+                                <div><strong>Manage Users:</strong> Control who has access to your admin panel and
+                                    roles.</div>
+                            </li>
+                            <li style="margin-bottom: 15px; display: flex; align-items: center; gap: 10px;">
+                                <div class="stat-icon bg-warning" style="width: 40px; height: 40px; font-size: 16px;"><i
+                                        class="fa-solid fa-gear"></i></div>
+                                <div><strong>Site Settings:</strong> Change site name, logo, theme color, and basic
+                                    preferences.</div>
+                            </li>
+                            <li style="display: flex; align-items: center; gap: 10px;">
+                                <div class="stat-icon bg-danger" style="width: 40px; height: 40px; font-size: 16px;"><i
+                                        class="fa-solid fa-chart-line"></i></div>
+                                <div><strong>View Statistics:</strong> See detailed analytics and numbers for your
+                                    website traffic.</div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Statistics Section -->
+            <section id="section-statistics" class="content-section">
+                <div class="section-header">
+                    <h1>View Statistics</h1>
+                    <p>Overview of site activities.</p>
+                </div>
+                <div class="stats-grid">
+                    <div class="stat-card">
+                        <div class="stat-icon bg-primary"><i class="fa-solid fa-file-lines"></i></div>
+                        <div class="stat-details">
+                            <h3>Total Posts</h3>
+                            <p class="stat-num" id="stat-posts">45</p>
+                        </div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-icon bg-success"><i class="fa-solid fa-eye"></i></div>
+                        <div class="stat-details">
+                            <h3>Page Views</h3>
+                            <p class="stat-num" id="stat-views">12.4K</p>
+                        </div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-icon bg-warning"><i class="fa-solid fa-users"></i></div>
+                        <div class="stat-details">
+                            <h3>Total Users</h3>
+                            <p class="stat-num" id="stat-users">150</p>
+                        </div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-icon bg-danger"><i class="fa-solid fa-comment"></i></div>
+                        <div class="stat-details">
+                            <h3>Comments</h3>
+                            <p class="stat-num" id="stat-comments">320</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Posts Management Section -->
+            <section id="section-posts" class="content-section">
+                <div class="section-header flex-between">
+                    <div>
+                        <h1>Manage Posts</h1>
+                        <p>Add, edit, or delete articles and posts.</p>
+                    </div>
+                    <button class="btn btn-primary" id="btnAddPost"><i class="fa-solid fa-plus"></i> Add Post</button>
+                </div>
+                <div class="card">
+                    <div class="card-body">
+                        <div class="table-responsive">
+                            <table class="data-table">
+                                <thead>
+                                    <tr>
+                                        <th>ID</th>
+                                        <th>Title</th>
+                                        <th>Author</th>
+                                        <th>Status</th>
+                                        <th>Date</th>
+                                        <th>Actions</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="postsTableBody">
+                                    <!-- Populated by JS -->
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- User Management Section -->
+            <section id="section-users" class="content-section">
+                <div class="section-header flex-between">
+                    <div>
+                        <h1>Manage Users</h1>
+                        <p>Manage site users and their roles.</p>
+                    </div>
+                    <button class="btn btn-primary" id="btnAddUser"><i class="fa-solid fa-user-plus"></i> Add
+                        User</button>
+                </div>
+                <div class="card">
+                    <div class="card-body">
+                        <div class="table-responsive">
+                            <table class="data-table">
+                                <thead>
+                                    <tr>
+                                        <th>ID</th>
+                                        <th>User</th>
+                                        <th>Email</th>
+                                        <th>Role</th>
+                                        <th>Actions</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="usersTableBody">
+                                    <!-- Populated by JS -->
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Site Settings Section (Matches User Image) -->
+            <section id="section-settings" class="content-section active">
+                <div class="section-header">
+                    <h1>Site Settings</h1>
+                    <p>Configure your application preferences.</p>
+                </div>
+
+                <div class="settings-grid">
+                    <!-- General Settings Card -->
+                    <div class="card">
+                        <div class="card-header">
+                            <h2>General Settings</h2>
+                        </div>
+                        <div class="card-body">
+                            <form id="settingsGeneralForm">
+                                <div class="form-group">
+                                    <label>Site Name</label>
+                                    <input type="text" id="siteName" class="form-control" value="My Awesome Site"
+                                        required>
+                                </div>
+                                <div class="form-group">
+                                    <label>Site Description</label>
+                                    <textarea id="siteDesc" class="form-control"
+                                        rows="3">A modern blog built with HTML, CSS, and JS</textarea>
+                                </div>
+                                <div class="form-group">
+                                    <label>Admin Email</label>
+                                    <input type="email" id="siteEmail" class="form-control" value="admin@example.com"
+                                        required>
+                                </div>
+                                <button type="submit" class="btn btn-primary">Save Changes</button>
+                            </form>
+                        </div>
+                    </div>
+
+                    <!-- Appearance Card -->
+                    <div class="card">
+                        <div class="card-header">
+                            <h2>Appearance</h2>
+                        </div>
+                        <div class="card-body">
+                            <form id="settingsAppearanceForm">
+                                <div class="form-group">
+                                    <label>Theme Color</label>
+                                    <!-- Using color input to represent the block of color in the image -->
+                                    <input type="color" id="themeColor" class="form-control" value="#294af1"
+                                        style="height: 40px; padding: 2px;">
+                                </div>
+                                <div class="form-group">
+                                    <label>Logo URL</label>
+                                    <input type="text" id="logoUrl" class="form-control" value="https://..."
+                                        placeholder="https://...">
+                                </div>
+                                <div class="checkbox-wrap">
+                                    <input type="checkbox" id="darkModeToggle" checked>
+                                    <label for="darkModeToggle">Enable Dark Mode Toggle</label>
+                                </div>
+                                <button type="submit" class="btn btn-primary">Save Appearance</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+        </div>
+    </main>
+
+    <!-- Modal: Add/Edit Post -->
+    <div id="postModal" class="modal-overlay">
+        <div class="card modal-card">
+            <div class="card-header">
+                <h2 id="postModalTitle">Add Post</h2>
+                <button class="btn-icon close-modal" style="background:transparent; color:#666;"><i
+                        class="fa-solid fa-xmark"></i></button>
+            </div>
+            <div class="card-body">
+                <form id="postForm">
+                    <input type="hidden" id="postId">
+                    <div class="form-group">
+                        <label>Title</label>
+                        <input type="text" id="postTitle" class="form-control" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Content</label>
+                        <textarea id="postContent" class="form-control" rows="5" required></textarea>
+                    </div>
+                    <div class="form-group">
+                        <label>Status</label>
+                        <select id="postStatus" class="form-control" required>
+                            <option value="Published">Published</option>
+                            <option value="Draft">Draft</option>
+                        </select>
+                    </div>
+                    <button type="submit" class="btn btn-primary btn-block">Save Post</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal: Add/Edit User -->
+    <div id="userModal" class="modal-overlay">
+        <div class="card modal-card">
+            <div class="card-header">
+                <h2 id="userModalTitle">Add User</h2>
+                <button class="btn-icon close-modal" style="background:transparent; color:#666;"><i
+                        class="fa-solid fa-xmark"></i></button>
+            </div>
+            <div class="card-body">
+                <form id="userForm">
+                    <input type="hidden" id="userId">
+                    <div class="form-group">
+                        <label>Full Name</label>
+                        <input type="text" id="userName" class="form-control" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Email</label>
+                        <input type="email" id="userEmail" class="form-control" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Role</label>
+                        <select id="userRole" class="form-control" required>
+                            <option value="Subscriber">Subscriber</option>
+                            <option value="Editor">Editor</option>
+                            <option value="Admin">Admin</option>
+                        </select>
+                    </div>
+                    <button type="submit" class="btn btn-primary btn-block">Save User</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- Custom JS -->
+    <script src="js/admin-main.js"></script>
+</body>
+
+</html>
