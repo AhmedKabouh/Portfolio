@@ -126,3 +126,31 @@ function renderProjects() {
         </div>
     `).join('');
 }
+
+
+
+
+
+
+const sections = document.querySelectorAll('section'); // تأكد أن كل الأقسام تستخدم tag <section> أو غيرها لـ id
+const navLinks = document.querySelectorAll('nav ul li a');
+
+window.addEventListener('scroll', () => {
+    let current = '';
+
+    sections.forEach(section => {
+        const sectionTop = section.offsetTop;
+        const sectionHeight = section.clientHeight;
+        // إذا كان التمرير تجاوز بداية السكشن بمسافة بسيطة
+        if (pageYOffset >= (sectionTop - 150)) {
+            current = section.getAttribute('id');
+        }
+    });
+
+    navLinks.forEach(link => {
+        link.classList.remove('active');
+        if (link.getAttribute('href').includes(current)) {
+            link.classList.add('active');
+        }
+    });
+});
