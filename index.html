@@ -14,6 +14,10 @@
     <nav>
         <h2 class="logo interactive-text">Ahmed</h2>
         <div class="nav-right">
+            <div class="menu-toggle" id="mobile-menu">
+                <i class="fas fa-bars"></i>
+            </div>
+
             <ul>
                 <li><a href="#home">Home</a></li>
                 <li><a href="#about">About</a></li>
@@ -24,14 +28,15 @@
                 <li><a href="#services">Services</a></li>
                 <li><a href="#contact">Contact</a></li>
             </ul>
+
             <div class="nav-socials">
                 <a href="https://www.facebook.com/share/1CJ895cn6W/" target="_blank"><i
                         class="fab fa-facebook-f"></i></a>
                 <a href="https://www.instagram.com/ahmed_kabouh_?igsh=MTMxbm8wOGVpOTRibQ==" target="_blank"><i
                         class="fab fa-instagram"></i></a>
                 <a href="https://github.com/AhmedKabouh" target="_blank"><i class="fab fa-github"></i></a>
-                <a href="https://www.linkedin.com/in/ahmed-kabouh-73a664336?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app"
-                    target="_blank"><i class="fab fa-linkedin-in"></i></a>
+                <a href="https://www.linkedin.com/in/ahmed-kabouh-73a664336" target="_blank"><i
+                        class="fab fa-linkedin-in"></i></a>
             </div>
         </div>
     </nav>
@@ -246,23 +251,61 @@
     <section id="experience" class="experience">
         <h2 class="section-header">Experience</h2>
 
-        <div class="glass-card reveal">
+        <div class="exp-points-container reveal">
+            <div class="exp-point-item">
+                <div class="point-glow"></div>
+                <div class="point-content">
+                    <i class="fas fa-terminal"></i>
+                    <div class="point-text">
+                        <h3>Backend Development</h3>
+                        <p>Building scalable and maintainable backend systems using <strong>C#</strong> and
+                            <strong>ASP.NET Core</strong>, following Clean Architecture principles.
+                        </p>
+                    </div>
+                </div>
+            </div>
 
-            <i class="fas fa-laptop-code icon-glow accent-text"></i>
+            <div class="exp-point-item">
+                <div class="point-glow"></div>
+                <div class="point-content">
+                    <i class="fas fa-database"></i>
+                    <div class="point-text">
+                        <h3>Database Design</h3>
+                        <p>Designing optimized and secure databases using <strong>SQL Server</strong> and managing data
+                            efficiently with <strong>Entity Framework</strong>.</p>
+                    </div>
+                </div>
+            </div>
 
-            <h3>.NET Development Experience</h3>
+            <div class="exp-point-item">
+                <div class="point-glow"></div>
+                <div class="point-content">
+                    <i class="fas fa-code-branch"></i>
+                    <div class="point-text">
+                        <h3>API & Frontend Integration</h3>
+                        <p>Developing and integrating RESTful APIs with responsive <strong>Frontend</strong> interfaces
+                            using modern JavaScript and Bootstrap.</p>
+                    </div>
+                </div>
+            </div>
 
-            <p>
-                Hands-on experience developing backend systems and web applications using
-                <strong>C#</strong> and <strong>ASP.NET Core</strong>.
-                Worked on multiple practical projects involving
-                <strong>SQL Server</strong>, <strong>Entity Framework</strong>, and modern web technologies,
-                with the ability to implement requirements, solve technical problems,
-                and deliver reliable software solutions.
-            </p>
-
+            <div class="exp-point-item">
+                <div class="point-glow"></div>
+                <div class="point-content">
+                    <i class="fas fa-shield-alt"></i>
+                    <div class="point-text">
+                        <h3>Problem Solving</h3>
+                        <p>Applying <strong>SOLID principles</strong> and efficient coding practices to build reliable
+                            and scalable software solutions.</p>
+                    </div>
+                </div>
+            </div>
         </div>
     </section>
+
+
+
+
 
 
 
@@ -406,18 +449,72 @@
         }
     </style>
 
+
+
+
+
+
+
     <section id="contact" class="contact">
         <h2 class="section-header">Contact Me</h2>
+
+        <div class="cta-highlight-container reveal interactive-cta">
+            <span class="cta-hint animated-hint">Call to Action</span>
+            <h3 class="cta-main-title">
+                Great ideas deserve <span class="gradient-text glow-animation">great execution</span>
+            </h3>
+            <p class="contact-subtitle animate-on-scroll">
+                If you’re looking for someone who can turn
+                <span class="text-accent">ideas</span> into clean,
+                <span class="text-accent">powerful</span>, and
+                <span class="text-accent">scalable</span> digital solutions,
+                you’re in the right place.
+                Let’s connect and build something that <span class="text-glow">truly stands out</span>.
+            </p>
+        </div>
+
         <form id="contact-form" class="glass-form reveal">
             <div class="input-group">
                 <input type="text" name="name" placeholder="Name" required>
-
                 <input type="email" name="email" placeholder="Email" required>
             </div>
             <textarea name="message" placeholder="Your Message" required></textarea>
             <button class="btn-primary" type="submit">Send Message</button>
         </form>
+
+        <div class="creative-social-grid reveal">
+            <a href="https://www.facebook.com/share/1CJ895cn6W/" target="_blank" class="social-box facebook">
+                <div class="icon-circle"><i class="fab fa-facebook-f"></i></div>
+                <span>Facebook</span>
+            </a>
+            <a href="https://www.instagram.com/ahmed_kabouh_?igsh=MTMxbm8wOGVpOTRibQ==" target="_blank"
+                class="social-box instagram">
+                <div class="icon-circle"><i class="fab fa-instagram"></i></div>
+                <span>Instagram</span>
+            </a>
+            <a href="https://github.com/AhmedKabouh" target="_blank" class="social-box github">
+                <div class="icon-circle"><i class="fab fa-github"></i></div>
+                <span>GitHub</span>
+            </a>
+            <a href="https://www.linkedin.com/in/ahmed-kabouh-73a664336" target="_blank" class="social-box linkedin">
+                <div class="icon-circle"><i class="fab fa-linkedin-in"></i></div>
+                <span>LinkedIn</span>
+            </a>
+            <a href="https://wa.me/201019137132?text=Hello%20Ahmed%20I%20visited%20your%20portfolio%20and%20I%20would%20like%20to%20discuss%20a%20project%20with%20you"
+                target="_blank" class="social-box whatsapp">
+                <div class="icon-circle"><i class="fab fa-whatsapp"></i></div>
+                <span>WhatsApp</span>
+            </a>
+        </div>
     </section>
+
+
+
+
+
+
+
+
 
     <footer>
         <div class="footer-socials">
