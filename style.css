@@ -2052,143 +2052,6 @@ textarea {
 
 
 
-/* شاشات التابلت والموبايل */
-@media (max-width: 992px) {
-    nav ul {
-        display: none;
-        /* إخفاء القائمة العادية */
-    }
-
-    .home-container {
-        flex-direction: column;
-        /* الصورة والكلام يبقوا تحت بعض */
-        text-align: center;
-    }
-
-    .skills-container,
-    .services-grid,
-    .project-grid {
-        grid-template-columns: 1fr;
-        /* جعل المهارات والخدمات عمود واحد */
-        justify-content: center;
-    }
-
-    .input-group {
-        flex-direction: column;
-        /* حقول الاسم والايميل تحت بعض */
-    }
-}
-
-/* شاشات الموبايل الصغيرة */
-@media (max-width: 600px) {
-    .home-content h1 {
-        font-size: 2rem;
-        /* تصغير الخط قليلاً ليناسب الشاشة */
-    }
-
-    .service-card,
-    .glass-card {
-        width: 100%;
-        /* تأكد إن الكروت واخدة عرض الشاشة بالكامل مع padding */
-    }
-}
-
-
-
-
-
-
-@media (max-width: 992px) {
-    nav ul.active {
-        display: flex;
-        flex-direction: column;
-        position: absolute;
-        top: 70px;
-        left: 0;
-        width: 100%;
-        background: rgba(0, 0, 0, 0.9);
-        padding: 20px;
-    }
-}
-
-
-
-
-
-
-
-/* --- كود حل مشكلة التابلت والموبايل --- */
-@media (max-width: 1024px) {
-
-    /* إظهار أيقونة الثلاث شرط */
-    .menu-toggle {
-        display: block !important;
-        font-size: 1.8rem;
-        color: #00bcd4;
-        /* اللون اللي أنت بتستخدمه */
-        cursor: pointer;
-        z-index: 1001;
-    }
-
-    /* تحويل الناف بار لقائمة عمودية مخفية */
-    nav ul {
-        display: none;
-        flex-direction: column;
-        position: fixed;
-        top: 0;
-        right: 0;
-        width: 250px;
-        height: 100vh;
-        background: rgba(10, 10, 10, 0.95);
-        /* خلفية زجاجية غامقة */
-        backdrop-filter: blur(10px);
-        padding-top: 80px;
-        transition: 0.3s ease-in-out;
-        box-shadow: -5px 0 15px rgba(0, 0, 0, 0.5);
-    }
-
-    /* لما القائمة تكون مفتوحة */
-    nav ul.active {
-        display: flex;
-    }
-
-    nav ul li {
-        margin: 15px 0;
-    }
-
-    /* إخفاء السوشيال ميديا اللي في الناف بار في الموبايل عشان الزحمة */
-    .nav-socials {
-        display: none;
-    }
-}
-
-
-
-
-
-/* الكود ده هو اللي بيظهر القائمة فعلياً */
-nav ul.show-menu {
-    display: flex !important;
-    opacity: 1;
-    visibility: visible;
-}
-
-/* تأكد إن الـ z-index عالي عشان القائمة تظهر فوق الصور */
-@media (max-width: 1024px) {
-    nav ul {
-        display: none;
-        /* مخفية في العادي */
-        flex-direction: column;
-        position: fixed;
-        top: 70px;
-        right: 0;
-        width: 100%;
-        background: #111;
-        /* لون غامق */
-        z-index: 999;
-    }
-}
-
 
 
 
@@ -2209,4 +2072,123 @@ nav ul li a.active::after {
     background: var(--accent);
     box-shadow: 0 0 10px var(--accent);
     transition: 0.3s;
+}
+
+
+
+
+
+
+
+/* --- Responsive Fixes (Add to the end of style.css) --- */
+
+/* 1. إظهار القائمة دائماً ومنع اختفائها */
+@media (max-width: 1024px) {
+    nav {
+        flex-direction: column;
+        /* ترتيب اللوجو فوق القائمة */
+        padding: 10px;
+        height: auto;
+    }
+
+    .logo {
+        margin-bottom: 10px;
+        font-size: 24px;
+    }
+
+    nav ul {
+        display: flex !important;
+        /* إجبار القائمة على الظهور */
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 10px;
+    }
+
+    nav ul li {
+        margin-left: 10px;
+        margin-right: 10px;
+    }
+
+    nav ul li a {
+        font-size: 14px;
+    }
+
+    .nav-right {
+        flex-direction: column;
+        gap: 10px;
+        width: 100%;
+    }
+
+    /* إظهار أيقونات السوشيال ميديا في الناف بار لو حابب */
+    .nav-socials {
+        display: flex !important;
+        border-left: none;
+        padding-left: 0;
+        gap: 20px;
+    }
+}
+
+/* 2. ضبط الهوم سيكشن والصورة الكبيرة في الموبايل */
+@media (max-width: 768px) {
+    .home {
+        padding-top: 160px;
+        /* مساحة إضافية عشان الناف بار بقت أكبر */
+    }
+
+    .home-container {
+        flex-direction: column-reverse !important;
+        /* الصورة فوق والكلام تحت */
+        gap: 30px;
+    }
+
+    .profile-img {
+        width: 280px !important;
+        /* تصغير الصورة لتناسب شاشة الموبايل */
+        height: 280px !important;
+    }
+
+    .home h1 {
+        font-size: 2.5rem;
+        /* تصغير الخط في الموبايل */
+    }
+
+    .typewriter-text {
+        font-size: 1.5rem;
+    }
+
+    .cta-group {
+        flex-direction: column;
+        width: 100%;
+    }
+
+    .btn,
+    .btn-outline {
+        width: 100%;
+        text-align: center;
+    }
+}
+
+/* 3. ضبط الجريد (الشبكة) للمشاريع والخدمات */
+@media (max-width: 600px) {
+    section {
+        padding: 60px 5%;
+        /* تقليل المسافات الجانبية */
+    }
+
+    .project-grid,
+    .service-grid {
+        grid-template-columns: 1fr;
+        /* عنصر واحد في كل صف */
+    }
+
+    .input-group {
+        flex-direction: column;
+    }
+}
+
+/* تأكد إن مفيش حاجة تخرج بره الشاشة بالعرض */
+html,
+body {
+    max-width: 100%;
+    overflow-x: hidden;
 }
